@@ -145,6 +145,12 @@ module Invoicexpress
       tag 'invoice'
     end
 
+    class InvoiceReceipt < BaseModel
+      include BaseInvoice
+      include ExtraInvoice
+      tag 'invoice_receipt'
+    end
+
     class CashInvoice < BaseModel
       include BaseInvoice
       include ExtraInvoice
@@ -185,6 +191,10 @@ module Invoicexpress
       element :total_pages, Integer
       element :total_entries, Integer
       element :per_page, Integer
+    end
+
+    class InvoiceReceipts < Invoices
+      tag 'invoice_receipts'
     end
 
     class CashInvoices < BaseModel
